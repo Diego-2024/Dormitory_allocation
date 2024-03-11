@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>习惯调查</title>
+</head>
+<body>
+<div class="container" align="center">
+	<h1>个人宿舍习惯调查</h1>
+	<h5>注：一人只允许填写一次，如果已填写过的同学无需再填写</h5>
+				<h3>
+					{% with messages = get_flashed_messages(with_categories=true) %}
+					  {% if messages %}
+						<ul class=flashes>
+						{% for category, message in messages %}
+						  <li class="{{ category }}">{{ message }}</li>
+						{% endfor %}
+						</ul>
+					  {% endif %}
+					{% endwith %}
+				</h3>
+
+	<form action="http://127.0.0.1:5000//get_value" method="post">
+			<table align="center" border="2px"  width="300px">
+
+				<tr height="50px">
+					<td>1. 学号<br><input type="text" name="stu_id" /></td>
+				</tr>
+
+				<tr height="50px">
+					<td>2. 姓名<br><input type="text" name="name" /></td>
+				</tr>
+
+				<tr height="50px">
+					<td>3. 性别<br>
+						<input type="radio" name="sex" value="男" checked />男<br>
+						<input type="radio" name="sex" value="女" />女<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>4. 你睡觉是否打呼噜/说梦话/磨牙？<br>
+						<input type="radio" name="hobby3" value= 0 checked />不打<br>
+        				<input type="radio" name="hobby3" value= 1 />偶尔<br>
+						<input type="radio" name="hobby3" value= 2 />经常<br>
+						<input type="radio" name="hobby3" value= 3 />不清楚<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>5. 能否接受室友打呼噜/说梦话/磨牙？<br>
+						<input type="radio" name="hobby4" value= 0 checked />能<br>
+        				<input type="radio" name="hobby4" value= 1 />不能<br>
+						<input type="radio" name="hobby4" value= 2 />无所谓<br>
+						<input type="radio" name="hobby4" value= 3 />看音量大小<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>6. 早睡or晚睡？<br>
+						<input type="radio" name="hobby5" value= 0 checked />晚上12点之前<br>
+        				<input type="radio" name="hobby5" value= 1 />凌晨1点<br>
+						<input type="radio" name="hobby5" value= 2 />凌晨一点之后<br>
+						<input type="radio" name="hobby5" value= 3 />有时候通宵<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>7. 有午睡的习惯吗？<br>
+						<input type="radio" name="hobby6" value= 0 checked />有<br>
+        				<input type="radio" name="hobby6" value= 1 />无<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>8. 你最喜欢的兴趣爱好？<br>
+						<input type="radio" name="hobby7" value= 0 checked />阅读<br>
+        				<input type="radio" name="hobby7" value= 1 />游戏<br>
+						<input type="radio" name="hobby7" value= 2 />运动<br>
+        				<input type="radio" name="hobby7" value= 3 />美食<br>
+        				<input type="radio" name="hobby7" value= 4 />摄影<br>
+						<input type="radio" name="hobby7" value= 5 />其他<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>9. 对环境的要求？<br>
+						<input type="radio" name="hobby8" value= 0 checked />非常爱干净<br>
+        				<input type="radio" name="hobby8" value= 1 />不是很乱就行<br>
+						<input type="radio" name="hobby8" value= 2 />没要求<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>10. 是否会在宿舍内打游戏等？<br>
+						<input type="radio" name="hobby9" value= 0 checked />会，经常<br>
+        				<input type="radio" name="hobby9" value= 1 />会，偶尔<br>
+						<input type="radio" name="hobby9" value= 2 />不会<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>11. 能否接受室友在宿舍内打游戏？<br>
+						<input type="radio" name="hobby10" value= 0 checked />能<br>
+        				<input type="radio" name="hobby10" value= 1 />不能<br>
+						<input type="radio" name="hobby10" value= 2 />无所谓<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>12. 对宿舍氛围偏好？<br>
+						<input type="radio" name="hobby11" value= 0 checked />安静、互不打扰<br>
+        				<input type="radio" name="hobby11" value= 1 />热闹、关系密切<br>
+						<input type="radio" name="hobby11" value= 2 />无所谓<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>13. 晚上睡觉是否习惯开空调？<br>
+						<input type="radio" name="hobby12" value= 0 checked />最好不要开<br>
+        				<input type="radio" name="hobby12" value= 1 />可以接受<br>
+						<input type="radio" name="hobby12" value= 2 />1-2小时的定时<br>
+						<input type="radio" name="hobby12" value= 3 />整晚<br>
+						<input type="radio" name="hobby12" value= 4 />无所谓<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>14. 能否接受室友在宿舍食用气味过大的食物(榴莲、螺蛳粉等)?<br>
+						<input type="radio" name="hobby13" value= 0 checked />能<br>
+        				<input type="radio" name="hobby13" value= 1 />不能<br>
+						<input type="radio" name="hobby13" value= 2 />无所谓<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td>15. 您是否能接受抽烟的室友？<br>
+						<input type="radio" name="hobby14" value= 0 checked />能<br>
+        				<input type="radio" name="hobby14" value= 1 />不能<br>
+						<input type="radio" name="hobby14" value= 2 />无所谓<br>
+					</td>
+				</tr>
+
+				<tr height="50px">
+					<td colspan= 2 align="center">
+						<input type="submit" value="提交" />
+						<input type="reset" value="重置" />
+					</td>
+				</tr>
+			</table>
+
+	</form>
+
+
+
+
+
+
+  </div>
+	</body>
+</html>
+
+

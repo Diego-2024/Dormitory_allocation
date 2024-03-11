@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宿舍分配情况</title>
+</head>
+<body>
+    <h1 align="center">宿舍分配情况</h1>
+    {% if datas %}
+        {% for data in datas %}
+
+            <p style="text-align:center;">
+                学号：{{data[0]}} - 姓名：{{data[1]}} - 宿舍楼号：B{{data[2]}} - 宿舍号：{{data[3]}} - 床号：{{data[4]}}</p>
+        {% endfor %}
+
+        {% else %}
+        <p>暂时还没有完成分配，请耐性等待</p>
+    {% endif %}
+</body>
+</html>

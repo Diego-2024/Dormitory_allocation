@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择</title>
+</head>
+<body>
+    <div align="center" height="auto">
+
+            <form action="http://127.0.0.1:5000//distribution" METHOD="post">
+            <tr>
+                <td>
+                    <h3>请选择要分配宿舍性别</h3>
+                    <input type="radio" name="select" value="1">男<br>
+                    <input type="radio" name="select" value="2">女<br>
+                    <input type="radio" name="select" value="3" checked >男和女<br>
+                    <h4>请输入每栋宿舍楼层数</h4>
+                    <input type="text" name="number3"><br>
+                    <h4>请输入一层楼宿舍个数</h4>
+                    <input type="text" name="number2"><br>
+                    <h4>请输入每个宿舍分配人数</h4>
+                    <input type="text" name="number1"><br><br>
+                    <input type="submit" value="分配">
+                    <input type="reset" value="重置">
+                </td>
+            </tr>
+            </form>
+
+    <h1>-------------------------------------------------------------------------------------</h1>
+
+    </div>
+    <div align="center" height="auto">
+        <form action="http://127.0.0.1:5000//display_admin" method="post">
+            <tr>
+                <td>
+                    <h2>请选择要查看男/女生宿舍分配情况</h2>
+                    <input type="radio" name="sex" value="1" checked>男<br>
+                    <input type="radio" name="sex" value="2">女<br>
+                    <input type="submit" value="查看">
+                    <input type="reset" value="重置">
+                </td>
+            </tr>
+
+
+        </form>
+    </div>
+</body>
+</html>
